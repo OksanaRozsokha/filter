@@ -1,15 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FilterTableModule } from './filter-table/filter-table.module';
 import { AppComponent } from './app.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FilterTableModule
   ],
+  exports: [FilterTableModule],
   providers: [],
   bootstrap: [AppComponent]
 })
