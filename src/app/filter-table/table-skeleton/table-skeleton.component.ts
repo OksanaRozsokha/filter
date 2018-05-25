@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TableDataService } from '../table-data.service';
+import { Table } from '../table';
 
 @Component({
   selector: 'app-table-skeleton',
@@ -6,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./table-skeleton.component.css']
 })
 export class TableSkeletonComponent implements OnInit {
-  
+  table: Table[] = [];  
 
-  constructor() { }
+  constructor(private tableData: TableDataService) { }
 
   ngOnInit() {
-       
-  }  
+    this.tableData.getTableData().subscribe(data => this.table = data);    
+  }
+  
 }

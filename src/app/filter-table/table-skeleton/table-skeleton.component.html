@@ -1,13 +1,13 @@
 <table>
   <thead>
-    <tr>
-      <th>title</th>
-      <th>count</th>
-      <th>tags</th>
+    <tr class="table-tr">
+      <th class="width-t">title</th>
+      <th class="width-t">count</th>
+      <th class="width-t">tags</th>
     </tr>      
   </thead>
   <tbody>
-    <app-table-item></app-table-item>
+    <app-table-item *ngFor="let tr of table" [title]="tr.title" [count]="tr.count" [tags]="tr.tags"></app-table-item>
   </tbody>
 
 </table>

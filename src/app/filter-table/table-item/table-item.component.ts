@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { TableDataService } from '../table-data.service';
-import { Table } from '../table';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-table-item',
@@ -8,13 +6,18 @@ import { Table } from '../table';
   styleUrls: ['./table-item.component.css'],
 })
 
-export class TableItemComponent implements OnInit {
-  table: Table[] = [];
+export class TableItemComponent implements OnInit {  
+  @Input() title;
+  @Input() count;
+  @Input() tags;
   
-  constructor(private tableData: TableDataService) { }
+  displayTableTr = true;
+  
+
+  constructor() { }
 
   ngOnInit() {
-    this.tableData.getTableData().subscribe(data => this.table = data);
+    
   } 
 
 }

@@ -1,8 +1,8 @@
-<tr class="table-tr" *ngFor="let singleRow of table">
-  <td>{{ singleRow.title }}</td>
-  <td>{{ singleRow.count }}</td>
-  <td>
-    <tag></tag>
+<tr *ngIf="displayTableTr" class="table-tr">
+  <td class="width-t">{{title}}</td>
+  <td class="width-t">{{count}}</td>
+  <td class="width-t">
+    <app-tag *ngFor="let tag of tags" [tag]="tag"></app-tag>
   </td>
 </tr>
 
